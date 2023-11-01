@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.cont{
+    text-align: center;
+    margin-top: 70px;
+}
+.upload{
+    text-align: center;
+    margin-top: 30px ;
+}
+    </style>
+</head>
+<body>
+    <logo><a href="index.html">Click here To Goback To Home</a></logo>
+    <header  style="text-align: center;
+    font-family: Impact;" >
+        <h1>Welcome to MyMusic-Expo</h1>
+        <h2>Let us Get you Famous</h2>
+    </header>
+    <div class="cont">
+    <div class="upload-img">
+        <h2>Upload you Profile Picture</h2>
+        <img id="profile-picture" src="/default-profile-picture.jpg" alt="Profile Picture" style="border-radius: 50px;">
+
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="profilePicture" id="profilePicture" accept="image/*">
+            <button type="submit">Upload Profile Picture</button>
+        </form>
+        
+    </div>
+</div>
+    <div class="upload">
+        <h2>Upload your Song</h2><br>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" name="song" id="song"><br>
+            <input type="text" name="title" id="title" placeholder="Song Title"><br>
+            <input type="text" name="artist" id="artist" placeholder="Artist"><br>
+            <input type="text" name="genre" id="genre" placeholder="Genre"><br>
+            <button type="submit">Upload</button>
+        </form>
+
+    </div>
+    </div>
+    <script src="script.js">
+        const uploadForm = document.getElementById('upload-form');
+
+uploadForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(uploadForm);
+    const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData,
+    });
+
+    if (response.status === 200) {
+        alert('Profile picture uploaded successfully');
+        updateSongList();
+    } else {
+        alert('Error uploading profile picture');
+    }
+});
+
+    </script>
+</body>
+</html>
