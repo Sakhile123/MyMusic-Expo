@@ -14,13 +14,19 @@
             text-align: center;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 50px;
+            background: white;
+            color: black;
         }
-        .logo h1:hover{
+      
+        .navbar{
+            background: white;
             color: black;
         }
         .navbar nav{
             text-align: center;
             margin-top: 20px;
+            background: white;
+            color: black;
         }
         .navbar nav a{
             text-decoration: none;
@@ -29,16 +35,29 @@
             margin: 15px;
             background: none;
             margin-top: 20px;
-            color: antiquewhite;
+            color: black;
             text-emphasis: bold;
         }
-       
+        .navbar nav a:hover{
+            color: rgb(0, 204, 255);
+        }
     
           .body{
             text-align: center;
             margin-top: 50px;
-         
-          }    
+            padding-bottom: 15px;
+          } 
+         .p p button{
+            border-radius:5px ;
+            width: 50px;
+            background-color:green;
+            color: white;
+         }  
+         .p p button a{
+            background-color: green;
+            color: white;
+            font-family: Arial;
+         }
     </style>
 </head>
 <body>
@@ -53,13 +72,14 @@
             <a href="#">Contact</a>
         </nav>
     </div>
-    <section href="#home">
-       <div class="body">
-        <h1>The World of music</h1>
+    <section href="#home" 
+    style="border:solid white; margin-top: 150px;width:35%;margin-left:33%;box-shadow: 15px 15px 15px 15px;">
+       <div class="body" >
+        <h1 style="font-size: 35px;">The World of Music</h1>
         <br>
        <div class="p">
-        <P>
-            Are you an <button><a href="artist.html">Artist</a></button> or a <button><a href="fan.html">fan</a></button>?
+        <P style="font-size: 18px;">
+            Are you an <button><a href="login.html">Artist</a></button> or a <button><a href="fan.html">Fan</a></button>?
             <br>Click one that is relevant to you.
         </P>
     </div> 
